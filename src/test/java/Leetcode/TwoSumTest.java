@@ -20,7 +20,7 @@ public class TwoSumTest {
     }
 
     @DisplayName("Leetcode Example Tests")
-    @ParameterizedTest
+    @ParameterizedTest(name = "Example {index}")
     @MethodSource("generator")
     public void testExamples(int[] nums, int target, int[] expectedResult) {
         int[] actualResult = TwoSum.Solve(nums, target);

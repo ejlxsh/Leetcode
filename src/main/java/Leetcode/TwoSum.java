@@ -3,7 +3,7 @@ package Leetcode;
 import java.util.Hashtable;
 
 public class TwoSum {
-    public static int[] Solve(int[] nums, int target) {
+    public static int[] solve(int[] nums, int target) {
 
         Hashtable<Integer, Integer> hashtable = new Hashtable<>();
 
@@ -15,8 +15,6 @@ public class TwoSum {
             else {
                 hashtable.put(nums[i], i);
             }
-
-            System.out.print(hashtable);
         }
 
         return new int[]{0};

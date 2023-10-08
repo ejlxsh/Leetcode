@@ -9,21 +9,21 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class TwoSumTest {
+public class MergeSortedArrayTest {
 
     public static Stream<Arguments> generator() {
         return Stream.of(
-                Arguments.of(new int[]{2,7,11,15}, 9, new int[]{0,1}),
-                Arguments.of(new int[]{3,2,4},     6, new int[]{1,2}),
-                Arguments.of(new int[]{3,3},       6, new int[]{0,1})
+                Arguments.of(new int[]{1,2,3,0,0,0}, 3, new int[]{2,5,6}, 3, new int[]{1,2,2,3,5,6}),
+                Arguments.of(new int[]{1}, 1, new int[]{0}, 0, new int[]{1}),
+                Arguments.of(new int[]{0}, 0, new int[]{1}, 1, new int[]{1})
         );
     }
 
     @DisplayName("Leetcode Example Tests")
     @ParameterizedTest(name = "Example {index}")
     @MethodSource("generator")
-    public void testExamples(int[] nums, int target, int[] expectedResult) {
-        int[] actualResult = TwoSum.solve(nums, target);
+    public void testExamples(int[] nums1, int m, int[] nums2, int n, int[] expectedResult) {
+        int[] actualResult = MergeSortedArray.solve(nums1, m, nums2, n);
         assertArrayEquals(expectedResult, actualResult);
     }
 }
